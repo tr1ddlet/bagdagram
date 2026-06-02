@@ -1,13 +1,13 @@
-<script setup>
-import NavBar from '../components/NavBar.vue'
-import PostCard from '../components/PostCard.vue'
-</script>
-
 <template>
     <NavBar />
     <h1>Feed</h1>
-    <PostCard username="@akumaqqe" content="da eto ya not a fake" />
-    <PostCard username="@gaya" content="ogo akuma i love you"/>
-    <PostCard username="Anonymous" content="блин люблю гаю да я акумакке не фейк" /> 
+    <PostCard v-for="post in postsStore.posts" :key="post.id" :username="post.author" :content="post.content" />
 </template>
-<!-- назера тут / почему стайл скопед -->
+
+
+<script setup>
+import NavBar from '../components/NavBar.vue'
+import PostCard from '../components/PostCard.vue'
+import { usePostsStore } from '../stores/posts.ts'
+const postsStore = usePostsStore()
+</script>

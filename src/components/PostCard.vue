@@ -7,7 +7,7 @@
         </p>
 
         <div class="actions">
-            ❤️
+            ❤️ 67
             📩
         </div>
     </div>
